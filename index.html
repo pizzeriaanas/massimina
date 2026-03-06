@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://awards.infcdn.net/2024/circle_v2.css" rel="stylesheet"/>
     
     <style>
         :root { --fumo: #0a0a0a; --neon: #facc15; --passione: #e11d48; }
@@ -17,227 +18,108 @@
         .brutal-shadow { box-shadow: 8px 8px 0px var(--passione); }
         .brutal-shadow-neon { box-shadow: 5px 5px 0px var(--neon); }
         
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .animate-reviews { display: flex; width: max-content; animation: scroll 40s linear infinite; }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-        .allergen-tag { font-size: 0.6rem; color: var(--passione); font-weight: bold; text-transform: uppercase; margin-top: 5px; border-top: 1px solid #333; padding-top: 2px; display: block; }
         
-        .btn-call-float { position: fixed; bottom: 20px; right: 20px; z-index: 99; background-color: var(--passione); color: white; padding: 15px 25px; font-weight: bold; border: 3px solid white; box-shadow: 5px 5px 0px var(--neon); text-transform: uppercase; border-radius: 0; }
-        .social-btn { transition: all 0.3s ease; border: 2px solid #333; }
-        .social-btn:hover { border-color: var(--neon); transform: translateY(-3px); }
-
-        /* Stile aggiuntivo per sezione Regolamento */
         .regola-box { border-left: 4px solid var(--passione); padding-left: 1rem; margin-bottom: 1.5rem; }
-        .regola-num { color: var(--neon); font-weight: bold; font-size: 0.7rem; display: block; margin-bottom: 2px; }
+        .platform-card { transition: all 0.3s ease; border: 2px solid #222; background: #0f0f0f; display: flex; flex-direction: column; justify-content: center; height: 100px; }
+        .platform-card:hover { border-color: var(--neon); transform: translateY(-5px); }
+        
+        .ta-wrapper { background: white; padding: 15px; border-radius: 8px; display: inline-block; vertical-align: middle; border: 4px solid var(--neon); }
     </style>
 </head>
 <body class="antialiased">
 
     <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#facc15] text-black p-4 z-[101] border-t-4 border-black translate-y-full transition-transform duration-500 font-bold uppercase text-xs">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <p>Sito ottimizzato per Pizzeria Anas - Via della Massimilla 80.</p>
+            <p>Pizzeria Anas - Via della Massimilla 80, Roma. Sito Ufficiale 2026.</p>
             <button onclick="acceptCookies()" class="bg-black text-white px-6 py-2 brutal-shadow">CHIUDI</button>
         </div>
     </div>
 
-    <a href="tel:0670451243" class="btn-call-float md:hidden">📞 CHIAMA ORA</a>
+    <a href="tel:0670451243" class="fixed bottom-5 right-5 z-[100] md:hidden bg-[#e11d48] text-white p-4 font-bold border-2 border-white shadow-lg italic">📞 CHIAMA ORA</a>
 
-    <header class="sticky top-0 z-50 bg-[#0a0a0a] border-b-4 border-[#facc15] p-4">
+    <header class="sticky top-0 z-50 bg-[#0a0a0a] border-b-4 border-[#facc15] p-3">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-bold text-[#facc15] italic tracking-tighter">PIZZERIA ANAS</h1>
-            <nav class="hidden md:flex items-center gap-6 text-[10px] font-bold uppercase">
-                <a href="#menu" class="hover:text-[#e11d48]">Menu</a>
-                <a href="#regolamento" class="hover:text-[#e11d48]">Regolamento</a>
-                <a href="#confronto" class="hover:text-[#e11d48]">Perché noi</a>
-                <a href="#social" class="hover:text-[#e11d48]">Social</a>
-                <a href="tel:0670451243" class="bg-[#e11d48] text-white px-4 py-2 brutal-shadow-neon italic">ORDINA ORA</a>
+            <h1 class="text-xl font-bold text-[#facc15] italic tracking-tighter">PIZZERIA ANAS</h1>
+            <nav class="hidden md:flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest">
+                <a href="#menu" class="hover:text-[#facc15]">Menu</a>
+                <a href="#premi" class="hover:text-[#facc15]">Eccellenze</a>
+                <a href="#social" class="hover:text-[#facc15]">Social & Recensioni</a>
+                <a href="#regolamento" class="hover:text-[#e11d48]">Norme</a>
+                <a href="tel:0670451243" class="bg-[#e11d48] text-white px-5 py-2 brutal-shadow-neon italic">ORDINA</a>
             </nav>
         </div>
     </header>
 
-    <section class="py-12 bg-zinc-900 border-b-2 border-zinc-800 overflow-hidden">
-        <div class="animate-reviews flex items-center">
-            <div class="bg-black p-6 w-[300px] mx-4 border-2 border-zinc-800">
-                <p class="text-xs italic text-zinc-300">"La miglior pizza di Massimina! Impasto leggero e ingredienti sempre freschi."</p>
-                <span class="text-[#facc15] font-bold text-[10px] block mt-2">- MARCO R.</span>
-            </div>
-            <div class="bg-black p-6 w-[300px] mx-4 border-2 border-zinc-800">
-                <p class="text-xs italic text-zinc-300">"Supplì spettacolari, croccanti e con tanto cuore di mozzarella."</p>
-                <span class="text-[#facc15] font-bold text-[10px] block mt-2">- ELENA V.</span>
-            </div>
-            <div class="bg-black p-6 w-[300px] mx-4 border-2 border-zinc-800">
-                <p class="text-xs italic text-zinc-300">"Locale pulito e personale gentilissimo. Una certezza dal 2015."</p>
-                <span class="text-[#facc15] font-bold text-[10px] block mt-2">- LUCA M.</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="confronto" class="py-20 px-4 bg-black">
+    <section id="premi" class="py-16 bg-black border-b border-zinc-800 text-center">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 italic text-[#facc15]">PIZZERIA ANAS VS PIZZERIE INDUSTRIALI</h2>
-            <div class="grid md:grid-cols-2 gap-0 border-4 border-[#facc15] brutal-shadow">
-                <div class="p-8 bg-zinc-900 border-b-4 md:border-b-0 md:border-r-4 border-[#facc15]">
-                    <h4 class="text-zinc-500 font-bold mb-6 text-xl tracking-tighter">PIZZERIE STANDARD</h4>
-                    <ul class="space-y-4 text-zinc-500 text-sm font-bold">
-                        <li>❌ Farine raffinate di bassa qualità</li>
-                        <li>❌ Lievitazioni flash (gonfiore addominale)</li>
-                        <li>❌ Ingredienti di sottomarca</li>
-                        <li>❌ Ambiente rumoroso e poco curato</li>
-                    </ul>
+            <h3 class="text-[#facc15] text-xl font-bold mb-10 italic uppercase tracking-[0.2em]">ECCELLENZE 2025</h3>
+            <div class="flex flex-wrap justify-center items-center gap-8">
+                <div class="ta-wrapper brutal-shadow-neon">
+                    <div id="TA_restaurantWidgetWhite812" class="TA_restaurantWidgetWhite"><ul id="j0TyEVBPC" class="TA_links qjlwaUys0QDD"><li id="zNciCoJTVgz" class="bEicDm4M"><a target="_blank" href="https://www.tripadvisor.it/Restaurant_Review-g12946238-d33095805-Reviews-Pizzeria_Anas-La_Massimina_Casal_Lumbroso_Province_of_Rome_Lazio.html"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/v2/Tripadvisor_lockup_horizontal_registered-24177-2.svg" alt="Tripadvisor" style="width:150px;"/></a></li></ul></div><script async src="https://www.jscache.com/wejs?wtype=restaurantWidgetWhite&uniq=812&locationId=33095805&lang=it&display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
                 </div>
-                <div class="p-8 bg-black">
-                    <h4 class="text-[#facc15] font-bold mb-6 text-xl tracking-tighter">LA NOSTRA RESISTENZA</h4>
-                    <ul class="space-y-4 text-white text-sm font-bold">
-                        <li>✅ Solo pomodoro 100% Italiano</li>
-                        <li>✅ Lunga lievitazione (Alta digeribilità)</li>
-                        <li>✅ Materie prime da filiera controllata</li>
-                        <li>✅ Ambiente sano (No Fumo) e Protetto</li>
-                    </ul>
+                <div id="circle-r-ribbon"> 
+                    <div class="r-ribbon_ahead "> <svg width="160" height="160" viewBox="0 0 160 160"> <defs><path id="h1" d="M 30 80 a 50 50 0 1 1 100 0"></path></defs> <text class="r-ribbon_ahead-heading f12" fill="#000" text-anchor="middle"><textPath startOffset="50%" xlink:href="#h1">Best restaurant</textPath></text></svg> </div> <p class="r-ribbon_year">2025</p> <a href="https://restaurantguru.com/Pizzeria-Anas-La-Massimina-Casal-Lumbroso" class="r-ribbon_title" target="_blank">Pizzeria Anas</a> <div class="r-ribbon_ahead r-ribbon_ahead-bottom"> <svg width="120" height="120" viewBox="0 0 120 120"> <defs><path id="s1" d="M 12 60 a 48 48 0 0 0 96 0"></path></defs> <text class="r-ribbon_ahead-subh" fill="#000" text-anchor="middle"><textPath startOffset="50%" xlink:href="#s1">Restaurant Guru</textPath></text></svg> </div>
+                </div>
+                <div id="circle-r-ribbon"> 
+                    <div class="r-ribbon_ahead "> <svg width="160" height="160" viewBox="0 0 160 160"> <defs><path id="h2" d="M 30 80 a 50 50 0 1 1 100 0"></path></defs> <text class="r-ribbon_ahead-heading f12" fill="#000" text-anchor="middle"><textPath startOffset="50%" xlink:href="#h2">Miglior takeaway</textPath></text></svg> </div> <p class="r-ribbon_year">2025</p> <a href="https://restaurantguru.it/Pizzeria-Anas-La-Massimina-Casal-Lumbroso" class="r-ribbon_title" target="_blank">Pizzeria Anas</a> <div class="r-ribbon_ahead r-ribbon_ahead-bottom"> <svg width="120" height="120" viewBox="0 0 120 120"> <defs><path id="s2" d="M 12 60 a 48 48 0 0 0 96 0"></path></defs> <text class="r-ribbon_ahead-subh" fill="#000" text-anchor="middle"><textPath startOffset="50%" xlink:href="#s2">Restaurant Guru</textPath></text></svg> </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="menu" class="py-20 px-4 bg-zinc-950">
+    <section id="social" class="py-20 px-4 bg-zinc-950">
         <div class="container mx-auto">
-            <h3 class="text-3xl font-bold mb-12 text-center italic text-[#facc15]">I PIÙ FAMOSI</h3>
-            <div class="menu-grid mb-16">
-                <div class="p-6 border border-zinc-800 hover:border-[#facc15] bg-zinc-900/30 transition-all">
-                    <div class="flex justify-between font-bold text-lg mb-2"><span>MARGHERITA</span><span>€ 6,00</span></div>
-                    <p class="text-xs text-zinc-400 italic">Pomodoro, mozzarella e basilico. La base della nostra arte.</p>
-                    <span class="allergen-tag">Glutine, Latte</span>
-                </div>
-                <div class="p-6 border border-zinc-800 hover:border-[#facc15] bg-zinc-900/30">
-                    <div class="flex justify-between font-bold text-lg mb-2"><span>DIAVOLA 🔥</span><span>€ 7,00</span></div>
-                    <p class="text-xs text-zinc-400 italic">Pomodoro, mozzarella e salame piccante di prima scelta.</p>
-                    <span class="allergen-tag">Glutine, Latte</span>
-                </div>
-                <div class="p-6 border border-zinc-800 hover:border-[#facc15] bg-zinc-900/30">
-                    <div class="flex justify-between font-bold text-lg mb-2"><span>SUPPLÌ CLASSICO</span><span>€ 1,00</span></div>
-                    <p class="text-xs text-zinc-400 italic">Il fritto romano per eccellenza. Riso al ragù e cuore filante.</p>
-                    <span class="allergen-tag">Glutine, Latte, Sedano</span>
-                </div>
-                <div class="p-6 border border-zinc-800 hover:border-[#facc15] bg-zinc-900/30">
-                    <div class="flex justify-between font-bold text-lg mb-2"><span>PIZZA ALLA PALA</span><span>€ 13,00</span></div>
-                    <p class="text-xs text-zinc-400 italic">Pala intera (3 gusti a scelta). Perfetta da condividere.</p>
-                    <span class="allergen-tag">Glutine, Latte</span>
-                </div>
-            </div>
-            <div class="text-center">
-                <a href="https://www.leggimenu.it/menu/pizzeria-anas?v=807534" target="_blank" class="inline-block bg-[#facc15] text-black font-bold px-10 py-5 brutal-shadow uppercase italic hover:scale-105 transition-all">
-                    👉 VEDI TUTTO IL MENU (PIÙ DI 50 ARTICOLI)
+            <h3 class="text-3xl font-bold mb-12 text-center italic text-[#facc15]">SOCIAL & RECENSIONI</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <a href="https://www.tripadvisor.it/Restaurant_Review-g12946238-d33095805-Reviews-Pizzeria_Anas-La_Massimina_Casal_Lumbroso_Province_of_Rome_Lazio.html" target="_blank" class="platform-card p-4 text-center">
+                    <span class="block text-[#34e0a1] font-bold text-xs uppercase">TripAdvisor</span>
+                    <span class="text-[9px] text-zinc-500">Recensioni</span>
+                </a>
+                <a href="https://restaurantguru.it/Pizzeria-Anas-La-Massimina-Casal-Lumbroso" target="_blank" class="platform-card p-4 text-center">
+                    <span class="block text-[#ffcc00] font-bold text-xs uppercase">Restaurant Guru</span>
+                    <span class="text-[9px] text-zinc-500">Classifica</span>
+                </a>
+                <a href="https://www.paginegialle.it/roma-rm/pizzeria/pizzeria-anas" target="_blank" class="platform-card p-4 text-center">
+                    <span class="block text-[#ffed00] font-bold text-xs uppercase">Pagine Gialle</span>
+                    <span class="text-[9px] text-zinc-500">Info Aziendali</span>
+                </a>
+                <a href="https://www.instagram.com/pizzeria_anas/" target="_blank" class="platform-card p-4 text-center">
+                    <span class="block text-[#e1306c] font-bold text-xs uppercase">Instagram</span>
+                    <span class="text-[9px] text-zinc-500">Foto & Reel</span>
+                </a>
+                <a href="https://www.facebook.com/pizzeriaanas/" target="_blank" class="platform-card p-4 text-center">
+                    <span class="block text-[#1877f2] font-bold text-xs uppercase">Facebook</span>
+                    <span class="text-[9px] text-zinc-500">Community</span>
+                </a>
+                <a href="https://www.youtube.com/@pizzeriaanas" target="_blank" class="platform-card p-4 text-center">
+                    <span class="block text-[#ff0000] font-bold text-xs uppercase">YouTube</span>
+                    <span class="text-[9px] text-zinc-500">Video</span>
                 </a>
             </div>
         </div>
     </section>
 
-    
-<section id="regolamento" class="py-20 px-4 bg-zinc-900">
-    <div class="container mx-auto max-w-4xl">
-        <div class="bg-black p-8 brutal-border brutal-shadow">
-            <h3 class="text-3xl font-extrabold mb-6 italic text-[#e11d48] uppercase tracking-tighter">NORME DI COMPORTAMENTO E DIVIETI</h3>
-            <p class="text-[11px] font-bold text-white mb-10 bg-[#e11d48] inline-block px-3 py-1 uppercase border-2 border-white">
-                Denunce alle autorità competenti senza preavviso per i trasgressori
-            </p>
-            
-            <div class="mb-10 p-4 border-4 border-dashed border-[#e11d48] bg-zinc-900">
-                <span class="text-[#e11d48] font-black text-xl uppercase italic">ART. 8 - TARIFFA DI DISTURBO</span>
-                <p class="text-white font-bold text-lg uppercase leading-tight">
-                    Ogni violazione attiva una penale di <span class="text-2xl text-[#e11d48]">€ 5,00 a persona ogni 15 minuti</span>, da pagare ANTICIPATAMENTE e immediatamente.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-x-10 gap-y-6 text-[11px] font-bold uppercase tracking-tighter text-zinc-300">
-                <div class="regola-box border-b border-zinc-800 pb-2">
-                    <span class="block text-[#e11d48] mb-1 text-sm italic">ART. 1 - PROPRIETÀ PRIVATA</span>
-                    AREA RISERVATA ALLO SCARICO MERCI E FORNITORI. DIVIETO DI SOSTA E FERMATA. SEGNALAZIONE IMMEDIATA PER INTRALCIO COMMERCIALE.
-                </div>
-
-                <div class="regola-box border-b border-zinc-800 pb-2">
-                    <span class="block text-[#e11d48] mb-1 text-sm italic text-sm">ART. 2 - ARREDI</span>
-                    Vietato spostare o occupare tavoli e sedie fuori servizio o impilati. Ogni manomissione sarà addebitata.
-                </div>
-
-                <div class="regola-box border-b border-zinc-800 pb-2">
-                    <span class="block text-[#e11d48] mb-1 text-sm italic text-sm text-sm">ART. 3 - ORDINE</span>
-                    Vietati schiamazzi e musica. I disturbatori e chi arreca fastidio verranno allontanati immediatamente.
-                </div>
-
-                <div class="regola-box border-b border-zinc-800 pb-2">
-                    <span class="block text-[#e11d48] mb-1 text-sm italic text-sm text-sm text-sm">ART. 4 - NO FUMO</span>
-                    Divieto assoluto di fumo e svapo in tutta la proprietà (interno ed esterno). Rispetto per chi mangia.
-                </div>
-
-                <div class="regola-box border-b border-zinc-800 pb-2">
-                    <span class="block text-[#e11d48] mb-1 text-sm italic text-sm text-sm text-sm text-sm">ART. 5 - ENERGIA</span>
-                    Vietato ricaricare dispositivi dalle prese. Il fatto costituisce furto di energia elettrica (Art. 624 c.p.).
-                </div>
-
-                <div class="regola-box border-b border-zinc-800 pb-2">
-                    <span class="block text-[#e11d48] mb-1 text-sm italic text-sm text-sm text-sm text-sm text-sm text-sm">ART. 6 - RIFIUTI</span>
-                    USARE SOLO CESTINI INTERNI. ASSOLUTAMENTE VIETATO gettare rifiuti nei mastelli AMA privati (BLU, GIALLO, VERDE, MARRONE, GRIGIO).
-                </div>
-
-                <div class="regola-box border-b border-zinc-800 pb-2">
-                    <span class="block text-[#e11d48] mb-1 text-sm italic text-sm text-sm text-sm text-sm text-sm text-sm text-sm">ART. 7 - PERSONALE</span>
-                    Le disposizioni della Direzione vanno eseguite senza discussioni. Dare fastidio al personale attiva la tariffa Art. 8.
-                </div>
-
-                <div class="regola-box border-b border-zinc-800 pb-2">
-                    <span class="block text-[#e11d48] mb-1 text-sm italic text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm">ART. 9 - VIDEOSORVEGLIANZA</span>
-                    Area soggetta a riprese. I filmati dei trasgressori saranno consegnati alle autorità per danni o violazioni.
-                </div>
-
-                <div class="regola-box border-b border-zinc-800 pb-2">
-                    <span class="block text-[#e11d48] mb-1 text-sm italic text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm">ART. 10 - CONSUMAZIONI</span>
-                    L'uso dei posti è riservato esclusivamente ai clienti con regolare scontrino fiscale Pizzeria Anas del giorno.
-                </div>
-
-                <div class="regola-box border-b border-zinc-800 pb-2">
-                    <span class="block text-[#e11d48] mb-1 text-sm italic text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm">ART. 11 - RESPONSABILITÀ</span>
-                    La Direzione non risponde di oggetti incustoditi o danni derivanti dal mancato rispetto del regolamento.
-                </div>
-
-                <div class="regola-box border-b border-zinc-800 pb-2 md:col-span-2">
-                    <span class="block text-[#e11d48] mb-1 text-sm italic text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm text-sm">ART. 12 - ACCETTAZIONE</span>
-                    La sosta nella proprietà costituisce accettazione integrale del regolamento. Chi non accetta deve uscire subito.
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section id="social" class="py-20 px-4 bg-black border-y-2 border-zinc-800">
+    <section id="menu" class="py-20 px-4 bg-black">
         <div class="container mx-auto text-center">
-            <h3 class="text-2xl font-bold mb-10 italic text-[#facc15]">SOCIAL & RECENSIONI</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                <a href="https://www.tripadvisor.it/Restaurant_Review-g12946238-d33095805-Reviews-Pizzeria_Anas-La_Massimina_Casal_Lumbroso_Province_of_Rome_Lazio.html" target="_blank" class="social-btn p-4 bg-zinc-900 rounded flex flex-col items-center">
-                    <span class="text-[#00af87] font-bold text-xs mb-1 italic">TripAdvisor</span>
-                    <span class="text-[10px] opacity-50 uppercase">Recensioni</span>
-                </a>
-                <a href="https://restaurantguru.it/Pizzeria-Anas-La-Massimina-Casal-Lumbroso" target="_blank" class="social-btn p-4 bg-zinc-900 rounded flex flex-col items-center">
-                    <span class="text-white font-bold text-xs mb-1 italic">Restaurant Guru</span>
-                    <span class="text-[10px] opacity-50 uppercase">Classifica</span>
-                </a>
-                <a href="https://www.paginegialle.it/pizzeriaanas-roma" target="_blank" class="social-btn p-4 bg-zinc-900 rounded flex flex-col items-center">
-                    <span class="text-[#ffcc00] font-bold text-xs mb-1 italic">Pagine Gialle</span>
-                    <span class="text-[10px] opacity-50 uppercase">Info Aziendali</span>
-                </a>
-                <a href="https://www.instagram.com/pizzeriaanassrls/" target="_blank" class="social-btn p-4 bg-zinc-900 rounded flex flex-col items-center">
-                    <span class="text-[#e1306c] font-bold text-xs mb-1 italic">Instagram</span>
-                    <span class="text-[10px] opacity-50 uppercase">Foto & Reel</span>
-                </a>
-                <a href="https://www.facebook.com/people/Pizzeria-Anas/61554029327509/" target="_blank" class="social-btn p-4 bg-zinc-900 rounded flex flex-col items-center">
-                    <span class="text-[#1877f2] font-bold text-xs mb-1 italic">Facebook</span>
-                    <span class="text-[10px] opacity-50 uppercase">Community</span>
-                </a>
-                <a href="https://www.youtube.com/@PizzeriaAnas" target="_blank" class="social-btn p-4 bg-zinc-900 rounded flex flex-col items-center">
-                    <span class="text-[#ff0000] font-bold text-xs mb-1 italic">YouTube</span>
-                    <span class="text-[10px] opacity-50 uppercase">Video</span>
-                </a>
+            <h3 class="text-3xl font-bold mb-12 italic text-[#facc15]">I PIÙ FAMOSI</h3>
+            <div class="menu-grid mb-16">
+                <div class="p-6 border border-zinc-800 bg-zinc-900/30 text-left">
+                    <div class="flex justify-between font-bold text-lg mb-1"><span>MARGHERITA</span><span>€ 6,00</span></div>
+                    <p class="text-[10px] text-zinc-400 uppercase italic">Tradizione e semplicità.</p>
+                </div>
+                <div class="p-6 border border-zinc-800 bg-zinc-900/30 text-left">
+                    <div class="flex justify-between font-bold text-lg mb-1"><span>DIAVOLA 🔥</span><span>€ 7,00</span></div>
+                    <p class="text-[10px] text-zinc-400 uppercase italic">Per chi ama il piccante.</p>
+                </div>
+                <div class="p-6 border border-zinc-800 bg-zinc-900/30 text-left">
+                    <div class="flex justify-between font-bold text-lg mb-1"><span>SUPPLÌ</span><span>€ 1,00</span></div>
+                    <p class="text-[10px] text-zinc-400 uppercase italic">Il cuore di Roma.</p>
+                </div>
             </div>
+            <a href="https://www.leggimenu.it/menu/pizzeria-anas?v=807534" target="_blank" class="inline-block bg-[#facc15] text-black font-bold px-10 py-5 brutal-shadow uppercase italic">👉 CONSULTA IL MENU COMPLETO</a>
         </div>
     </section>
 
@@ -245,42 +127,59 @@
         <div class="container mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="reveal">
-                    <h3 class="text-3xl font-bold italic mb-6 uppercase">Dove Siamo</h3>
-                    <p class="text-xl font-bold text-[#facc15] mb-2 uppercase">Via della Massimilla 80, Roma</p>
-                    <p class="text-sm text-zinc-400 mb-8 font-bold uppercase italic">Massimina - 00166 (RM)</p>
-                    
-                    <div class="grid grid-cols-2 gap-4 text-[10px] font-bold uppercase">
-                        <div class="p-3 border border-zinc-700 text-center">🚫 VIETATO FUMARE</div>
-                        <div class="p-3 border border-zinc-700 text-center text-[#facc15]">💵 SOLO CONTANTI (NOVITA IN ARRIVO!)</div>
-                        <div class="p-3 border border-[#e11d48] text-[#e11d48] col-span-2 text-center italic uppercase">🛡️ AREA VIDEOSORVEGLIATA</div>
+                    <h3 class="text-3xl font-bold italic mb-6 text-[#facc15]">CONTATTI</h3>
+                    <p class="text-xl font-bold mb-2 uppercase tracking-tighter italic">Via della Massimilla 80, Roma</p>
+                    <div class="space-y-2 mb-8">
+                        <div class="p-3 border border-zinc-700 font-bold text-[10px]">🚫 NO FUMO E SVAPO</div>
+                        <div class="p-3 border border-zinc-700 text-[#facc15] font-bold text-[10px]">💵 SOLO CONTANTI</div>
+                        <div class="p-3 border border-[#e11d48] text-[#e11d48] font-bold text-[10px]">🛡️ AREA VIDEOSORVEGLIANZA</div>
                     </div>
-                    
-                    <a href="tel:0670451243" class="mt-8 block text-2xl font-bold text-center p-4 bg-white text-black hover:bg-[#facc15] transition-colors border-4 border-black">
-                        📞 06 7045 1243
-                    </a>
+                    <a href="tel:0670451243" class="block text-2xl font-bold text-center p-4 bg-white text-black border-4 border-black hover:bg-[#facc15] transition-all italic">📞 06 7045 1243</a>
                 </div>
-                
-                <div class="reveal brutal-border h-[400px] bg-black overflow-hidden">
-                    <iframe 
-                        width="100%" 
-                        height="100%" 
-                        frameborder="0" 
-                        scrolling="no" 
-                        marginheight="0" 
-                        marginwidth="0" 
-                        src="https://maps.google.com/maps?q=Via%20della%20Massimilla%2080,%20Roma&t=&z=15&ie=UTF8&iwloc=&output=embed">
-                    </iframe>
+                <div class="reveal brutal-border h-[400px] bg-black">
+                    <iframe width="100%" height="100%" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.617263546704!2d12.355153276537025!3d41.87961206530666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f5fb0353c7c7d%3A0x6a0c0e176b6b7a5a!2sVia%20della%20Massimilla%2C%2080%2C%2000166%20Roma%20RM!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="regolamento" class="py-20 px-4 bg-black border-t-2 border-zinc-800">
+        <div class="container mx-auto max-w-5xl">
+            <div class="bg-black p-8 brutal-border brutal-shadow">
+                <h3 class="text-2xl font-extrabold mb-1 italic text-[#e11d48] uppercase tracking-tighter">NORME DI COMPORTAMENTO E DIVIETI</h3>
+                <p class="text-[10px] font-bold text-white mb-8 bg-[#e11d48] inline-block px-3 py-1 uppercase border-2 border-white italic">
+                    Denunce alle autorità competenti senza preavviso per i trasgressori
+                </p>
+
+                <div class="mb-10 p-5 border-4 border-dashed border-[#e11d48] bg-zinc-900/50">
+                    <span class="text-[#e11d48] font-black text-xl uppercase italic">ART. 8 - TARIFFA DI DISTURBO</span>
+                    <p class="text-white font-bold text-lg uppercase leading-tight mt-2">
+                        Ogni violazione attiva una penale di <span class="text-3xl text-[#e11d48]">€ 5,00 a persona ogni 15 minuti</span>, da pagare ANTICIPATAMENTE e immediatamente.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-8 text-[10px] font-bold uppercase tracking-tight text-zinc-300">
+                    <div class="regola-box"><span class="text-white text-xs">ART. 1 - PROPRIETÀ PRIVATA</span><br>AREA RISERVATA ALLO SCARICO MERCI E FORNITORI. DIVIETO DI SOSTA E FERMATA. SEGNALAZIONE IMMEDIATA PER INTRALCIO COMMERCIALE.</div>
+                    <div class="regola-box"><span class="text-white text-xs">ART. 2 - ARREDI</span><br>Vietato spostare o occupare tavoli e sedie fuori servizio o impilati. Ogni manomissione sarà addebitata.</div>
+                    <div class="regola-box"><span class="text-white text-xs">ART. 3 - ORDINE</span><br>Vietati schiamazzi e musica. I disturbatori e chi arreca fastidio verranno allontanati immediatamente.</div>
+                    <div class="regola-box"><span class="text-white text-xs">ART. 4 - NO FUMO</span><br>Divieto assoluto di fumo e svapo in tutta la proprietà (interno ed esterno). Rispetto per chi mangia.</div>
+                    <div class="regola-box"><span class="text-white text-xs">ART. 5 - ENERGIA</span><br>Vietato ricaricare dispositivi dalle prese. Il fatto costituisce furto di energia elettrica (Art. 624 c.p.).</div>
+                    <div class="regola-box"><span class="text-white text-xs">ART. 6 - RIFIUTI</span><br>USARE SOLO CESTINI INTERNI. ASSOLUTAMENTE VIETATO gettare rifiuti nei mastelli AMA privati (BLU, GIALLO, VERDE, MARRONE, GRIGIO).</div>
+                    <div class="regola-box"><span class="text-white text-xs">ART. 7 - PERSONALE</span><br>Le disposizioni della Direzione vanno eseguite senza discussioni. Dare fastidio al personale attiva la tariffa Art. 8.</div>
+                    <div class="regola-box"><span class="text-white text-xs">ART. 9 - VIDEOSORVEGLIANZA</span><br>Area soggetta a riprese. I filmati dei trasgressori saranno consegnati alle autorità per danni o violazioni.</div>
+                    <div class="regola-box"><span class="text-white text-xs">ART. 10 - CONSUMAZIONI</span><br>L'uso dei posti è riservato esclusivamente ai clienti con regolare scontrino fiscale Pizzeria Anas del giorno.</div>
+                    <div class="regola-box"><span class="text-white text-xs">ART. 11 - RESPONSABILITÀ</span><br>La Direzione non risponde di oggetti incustoditi o danni derivanti dal mancato rispetto del regolamento.</div>
+                    <div class="regola-box md:col-span-2"><span class="text-white text-xs">ART. 12 - ACCETTAZIONE</span><br>La sosta nella proprietà costituisce accettazione integrale del regolamento. Chi non accetta deve uscire subito.</div>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="py-16 bg-black text-center border-t-2 border-zinc-800">
-        <h5 class="text-[#facc15] font-sync text-xl mb-6 italic tracking-tighter uppercase">Pizzeria Anas</h5>
+        <h5 class="text-[#facc15] font-sync text-xl mb-4 italic tracking-tighter">Pizzeria Anas</h5>
         <div class="text-[9px] text-zinc-600 font-bold uppercase tracking-widest leading-loose">
-            <p>© 2015 - 2026 PIZZERIA ANAS</p>
-            <p>ANAS SRLS | P.IVA 13411031006</p>
-            <p>Artigianalità e Passione a Massimina</p>
+            <p>© 2015 - 2026 PIZZERIA ANAS | ANAS SRLS | P.IVA 13411031006</p>
+            <p>RESISTENZA ARTIGIANALE - MASSIMINA</p>
         </div>
     </footer>
 
@@ -295,17 +194,10 @@
                 setTimeout(() => banner.style.transform = 'translateY(0)', 1500);
             }
         };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
-</html>
-
-
-
-
-
-
+                                                                                              </html>
