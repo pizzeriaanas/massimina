@@ -17,20 +17,18 @@
         .brutal-border { border: 3px solid var(--neon); }
         .brutal-shadow { box-shadow: 8px 8px 0px var(--passione); }
         .brutal-shadow-neon { box-shadow: 5px 5px 0px var(--neon); }
-        
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
         .regola-box { border-left: 4px solid var(--passione); padding: 1rem; background: rgba(255,255,255,0.03); margin-bottom: 1rem; }
         .platform-card { transition: all 0.3s ease; border: 2px solid #222; background: #0f0f0f; display: flex; flex-direction: column; justify-content: center; height: 100px; text-decoration: none; }
         .platform-card:hover { border-color: var(--neon); transform: translateY(-5px); }
-        
-        .ta-wrapper { background: white; padding: 15px; border-radius: 8px; display: inline-block; border: 4px solid var(--neon); }
+        .ta-wrapper { background: white; padding: 15px; border-radius: 8px; display: inline-block; border: 4px solid var(--neon); min-width: 200px; }
     </style>
 </head>
 <body class="antialiased">
 
     <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#facc15] text-black p-4 z-[101] border-t-4 border-black translate-y-0 transition-transform duration-500 font-bold uppercase text-xs">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <p>Pizzeria Anas - Via della Massimilla 80, Roma. Sito Ufficiale 2026.</p>
+            <p>Pizzeria Anas - Sito Ufficiale 2026.</p>
             <button onclick="document.getElementById('cookie-banner').style.transform='translateY(100%)'" class="bg-black text-white px-6 py-2 brutal-shadow">CHIUDI</button>
         </div>
     </div>
@@ -55,16 +53,21 @@
             <h3 class="text-[#facc15] text-xl font-bold mb-10 italic uppercase tracking-[0.2em] font-sync">ECCELLENZE</h3>
             <div class="flex flex-wrap justify-center items-center gap-10">
                 <div class="ta-wrapper brutal-shadow-neon">
-                    <img src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg" alt="Tripadvisor" style="width:150px;"/>
+                    <div id="TA_excellent168" class="TA_excellent">
+                        <ul id="Qp2DXXxCR2M" class="TA_links KYsHAr">
+                            <li id="UuTpY3" class="5yT1KpikyW">
+                                <a target="_blank" href="https://www.tripadvisor.it/Restaurant_Review-g12946238-d33095805-Reviews-Pizzeria_Anas-La_Massimina_Casal_Lumbroso_Province_of_Rome_Lazio.html">
+                                    <img src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg" alt="TripAdvisor" class="widEXCIMG" id="CDSWIDEXCLOGO"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <script async src="https://www.jscache.com/wejs?wtype=excellent&amp;uniq=168&amp;locationId=33095805&amp;lang=it&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
                 </div>
+
                 <div id="circle-r-ribbon"> 
                     <p class="r-ribbon_year">2025</p> 
-                    <span class="r-ribbon_title text-[10px] font-bold">Miglior Ristorante</span> 
-                    <p class="text-black font-bold text-[8px]">Restaurant Guru</p>
-                </div>
-                <div id="circle-r-ribbon"> 
-                    <p class="r-ribbon_year">2025</p> 
-                    <span class="r-ribbon_title text-[10px] font-bold">Miglior Takeaway</span> 
+                    <span class="r-ribbon_title text-[10px] font-bold uppercase">Miglior Ristorante</span> 
                     <p class="text-black font-bold text-[8px]">Restaurant Guru</p>
                 </div>
             </div>
@@ -89,81 +92,37 @@
                 </div>
             </div>
             <a href="https://www.leggimenu.it/menu/pizzeria-anas?v=807534" target="_blank" class="inline-block bg-[#facc15] text-black font-bold px-10 py-5 brutal-shadow uppercase italic transition-transform hover:scale-105">
-                👉 CONSULTA IL MENU COMPLETO
+                👉 SCOPRI IL MENU COMPLETO
             </a>
         </div>
     </section>
 
-    <section id="social" class="py-20 px-4 bg-zinc-950">
+    <section id="social" class="py-20 px-4 bg-zinc-950 text-center">
         <div class="container mx-auto">
-            <h3 class="text-3xl font-bold mb-12 text-center italic text-[#facc15] font-sync">SOCIAL & RECENSIONI</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <a href="https://www.tiktok.com/@pizzeria.anas" target="_blank" class="platform-card p-4 text-center">
+            <h3 class="text-3xl font-bold mb-12 italic text-[#facc15] font-sync">SOCIAL</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <a href="https://www.tiktok.com/@pizzeria.anas" target="_blank" class="platform-card p-4">
                     <span class="block text-[#ff0050] font-bold text-xs uppercase">TikTok</span>
-                    <span class="text-[9px] text-zinc-500">Video Trend</span>
                 </a>
-                <a href="https://www.google.com/maps?q=Pizzeria+Anas+Roma" target="_blank" class="platform-card p-4 text-center">
-                    <span class="block text-[#4285F4] font-bold text-xs uppercase">Google Maps</span>
-                    <span class="text-[9px] text-zinc-500">Trova la Sede</span>
-                </a>
-                <a href="https://maps.apple/p/Jwk0ISw.t2.tyv" target="_blank" class="platform-card p-4 text-center">
-                    <span class="block text-white font-bold text-xs uppercase">Apple Maps</span>
-                    <span class="text-[9px] text-zinc-500">Navigazione</span>
-                </a>
-                <a href="https://www.tripadvisor.it/Restaurant_Review-g12946238-d33095805-Reviews-Pizzeria_Anas-La_Massimina_Casal_Lumbroso_Province_of_Rome_Lazio.html" target="_blank" class="platform-card p-4 text-center">
-                    <span class="block text-[#34e0a1] font-bold text-xs uppercase">TripAdvisor</span>
-                    <span class="text-[9px] text-zinc-500">Recensioni</span>
-                </a>
-                <a href="https://www.instagram.com/pizzeria_anas/" target="_blank" class="platform-card p-4 text-center">
+                <a href="https://www.instagram.com/pizzeria_anas/" target="_blank" class="platform-card p-4">
                     <span class="block text-[#e1306c] font-bold text-xs uppercase">Instagram</span>
-                    <span class="text-[9px] text-zinc-500">Foto & Reel</span>
                 </a>
-                <a href="https://www.facebook.com/pizzeriaanas/" target="_blank" class="platform-card p-4 text-center">
+                <a href="https://www.facebook.com/pizzeriaanas/" target="_blank" class="platform-card p-4">
                     <span class="block text-[#1877f2] font-bold text-xs uppercase">Facebook</span>
-                    <span class="text-[9px] text-zinc-500">Community</span>
                 </a>
-                <a href="https://restaurantguru.it/Pizzeria-Anas-La-Massimina-Casal-Lumbroso" target="_blank" class="platform-card p-4 text-center">
-                    <span class="block text-[#ffcc00] font-bold text-xs uppercase">Restaurant Guru</span>
-                    <span class="text-[9px] text-zinc-500">Classifica</span>
-                </a>
-                <a href="https://www.turismoroma.it/it/accoglienza/pizzeria-anas" target="_blank" class="platform-card p-4 text-center">
-                    <span class="block text-[#ff3b3f] font-bold text-xs uppercase">Turismo Roma</span>
-                    <span class="text-[9px] text-zinc-500">Guida Città</span>
-                </a>
-                <a href="https://m.yelp.it/biz/pizzeria-anas-roma-3" target="_blank" class="platform-card p-4 text-center">
-                    <span class="block text-[#d32323] font-bold text-xs uppercase">Yelp</span>
-                    <span class="text-[9px] text-zinc-500">Local Guide</span>
-                </a>
-                <a href="https://www.paginegialle.it/roma-rm/pizzeria/pizzeria-anas" target="_blank" class="platform-card p-4 text-center">
-                    <span class="block text-[#ffed00] font-bold text-xs uppercase">Pagine Gialle</span>
-                    <span class="text-[9px] text-zinc-500">Info Aziendali</span>
-                </a>
-                <a href="https://www.paginebianche.it/pizzeriaanas-roma-32d73e52-27a1-4afb-b20e-9c4edad4a7ea" target="_blank" class="platform-card p-4 text-center">
-                    <span class="block text-[#0066cc] font-bold text-xs uppercase">Pagine Bianche</span>
-                    <span class="text-[9px] text-zinc-500">Contatti</span>
-                </a>
-                <a href="https://aziende.virgilio.it/pizzerie/roma-rm/pizzeriaanas-roma" target="_blank" class="platform-card p-4 text-center">
-                    <span class="block text-[#ff4e00] font-bold text-xs uppercase">Virgilio</span>
-                    <span class="text-[9px] text-zinc-500">Imprese</span>
-                </a>
-                <a href="https://www.localshop24.com/it/roma-rm-it/attivita/pizzeria/pizzeria-anas/" target="_blank" class="platform-card p-4 text-center">
-                    <span class="block text-[#28a745] font-bold text-xs uppercase">LocalShop24</span>
-                    <span class="text-[9px] text-zinc-500">Directory</span>
-                </a>
-                <a href="https://www.youtube.com/@PizzeriaAnas" target="_blank" class="platform-card p-4 text-center">
-                    <span class="block text-[#ff0000] font-bold text-xs uppercase">YouTube</span>
-                    <span class="text-[9px] text-zinc-500">Video</span>
+                <a href="https://www.tripadvisor.it/Restaurant_Review-g12946238-d33095805-Reviews-Pizzeria_Anas-La_Massimina_Casal_Lumbroso_Province_of_Rome_Lazio.html" target="_blank" class="platform-card p-4">
+                    <span class="block text-[#34e0a1] font-bold text-xs uppercase">TripAdvisor</span>
                 </a>
             </div>
         </div>
     </section>
 
-        <section id="dove" class="py-20 px-4 bg-zinc-900">
+    <section id="dove" class="py-20 px-4 bg-zinc-900">
         <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div>
                 <h3 class="text-3xl font-bold italic mb-6 text-[#facc15] font-sync">CONTATTI</h3>
                 <p class="text-xl font-bold mb-4 uppercase italic">PIZZERIA ANAS</p>
-                <div class="space-y-2 mb-8">
+                <div class="space-y-2 mb-8 text-left">
                     <div class="p-3 border border-zinc-700 font-bold text-[10px]">🚫 NO FUMO E SVAPO</div>
                     <div class="p-3 border border-zinc-700 text-[#facc15] font-bold text-[10px]">💵 CONTANTI E CARTE</div>
                     
@@ -184,47 +143,13 @@
             </div>
             <div class="brutal-border h-[400px] overflow-hidden bg-zinc-800">
                 <iframe 
-    width="100%" 
-    height="100%" 
-    style="border:0; filter: grayscale(1) invert(0.9);" 
-    loading="lazy" 
-    allowfullscreen 
-    referrerpolicy="no-referrer-when-downgrade"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.522204561021!2d12.3582496!3d41.881621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1325f6966f363c5d%3A0xc3910c268a78631!2sPizzeria%20Anas!5e0!3m2!1sit!2sit!4v1715634567890!5m2!1sit!2sit">
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; filter: grayscale(1) invert(0.9);" 
+                    loading="lazy" 
+                    allowfullscreen 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.618685160172!2d12.3551!3d41.8797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1325f0962817d98d%3A0x6a0c5c4e97669d58!2sPizzeria%20Anas!5e0!3m2!1sit!2sit!4v1710000000000!5m2!1sit!2sit">
                 </iframe>
-                
-            </div>
-        </div>
-        </section>
-    
-
-    <section id="regolamento" class="py-20 px-4 bg-black border-t-2 border-zinc-800">
-        <div class="container mx-auto max-w-5xl">
-            <div class="bg-black p-8 brutal-border brutal-shadow">
-                <h3 class="text-3xl font-extrabold mb-1 italic text-[#e11d48] uppercase tracking-tighter text-center font-sync">REGOLAMENTO INTERNO E NORME DI COMPORTAMENTO</h3>
-                <p class="text-[12px] font-bold text-white mb-8 bg-[#e11d48] block text-center px-3 py-2 uppercase border-2 border-white italic">
-                    Pizzeria Anas – Proprietà Privata (ANAS SRLS) - ACCETTAZIONE INTEGRALE E INCONDIZIONATA
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-4 text-[11px] font-bold uppercase tracking-tight text-zinc-300">
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 1 - AREA LOGISTICA</span><br>Area riservata esclusivamente allo scarico merci. DIVIETO DI SOSTA E FERMATA.</div>
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 2 - ARREDI</span><br>Vietato spostare o occupare tavoli fuori servizio. Ogni manomissione sarà addebitata.</div>
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 3 - ORDINE</span><br>Vietati schiamazzi. Minori vigilati dai genitori (unici responsabili).</div>
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 4 - NO FUMO</span><br>DIVIETO ASSOLUTO di fumo e svapo ALL'INTERNO DEL LOCALE.</div>
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 5 - ENERGIA</span><br>Vietato allaccio a prese elettriche. Il prelievo è FURTO (Art. 624 C.P.).</div>
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 6 - WI-FI</span><br>Uso riservato ai clienti. Vietato saturare la banda aziendale.</div>
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 7 - ANIMALI</span><br>VIETATO L'ACCESSO in tutta la proprietà per ragioni igienico-sanitarie.</div>
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 8 - CIBO ESTERNO</span><br>VIETATO introdurre cibi o bevande non acquistati presso di noi.</div>
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 9 - RIFIUTI</span><br>USARE SOLO CESTINI INTERNI. Vietato l'uso dei mastelli AMA privati.</div>
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 10 - TUTELA LAVORO</span><br>Offese al personale perseguite a norma di legge (Art. 35 Cost.).</div>
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 11 - VIDEO</span><br>Area monitorata h24. Filmati consegnati alle autorità per ogni illecito.</div>
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 12 - SOSTA</span><br>Uso dei posti riservato esclusivamente ai clienti della giornata.</div>
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 13 - ALLONTANAMENTO</span><br>Diritto insindacabile di allontanare chi non rispetta il decoro.</div>
-                    <div class="regola-box"><span class="text-white border-b border-[#e11d48] mb-1 inline-block font-sync">ART. 14 - OGGETTI</span><br>La Direzione non risponde di oggetti lasciati incustoditi.</div>
-                    <div class="regola-box md:col-span-2 border-2 border-white p-4 text-white text-center italic">
-                        ART. 15 - ACCETTAZIONE TASSATIVA: L'ACCESSO ALLA PROPRIETÀ IMPLICA L'ACCETTAZIONE INTEGRALE DEL PRESENTE REGOLAMENTO.
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -232,20 +157,22 @@
     <footer class="bg-black border-t-4 border-[#facc15] pt-12 pb-8 px-6 text-center">
         <div class="container mx-auto">
             <h2 class="text-[#facc15] font-sync text-2xl italic mb-4">PIZZERIA ANAS</h2>
-            <p class="text-[#e11d48] font-bold text-lg uppercase mb-2">Resistenza Artigianale</p>
-            <p class="text-white text-sm uppercase mb-8 opacity-80">📍 Via della Massimilla 80, 00166 Roma (RM)</p>
+            <p class="text-white text-sm uppercase mb-8 opacity-80">📍 Via della Massimilla 80, 00166 Roma</p>
             
-            <div class="grid md:grid-cols-2 gap-8 mb-12 text-[10px] text-zinc-500 uppercase tracking-widest text-left max-w-3xl mx-auto border-t border-zinc-800 pt-8">
+            <div class="mb-8">
+                <a href="https://www.tripadvisor.it/UserReviewDesign-g12946238-d33095805-Pizzeria_Anas-La_Massimina_Casal_Lumbroso_Province_of_Rome_Lazio.html" target="_blank" class="text-[#34e0a1] font-bold text-xs uppercase border border-[#34e0a1] px-4 py-2 hover:bg-[#34e0a1] hover:text-black transition-all">
+                    Scrivi una recensione su TripAdvisor
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 text-[10px] text-zinc-500 uppercase tracking-widest text-left max-w-3xl mx-auto border-t border-zinc-800 pt-8">
                 <div>
                     <p class="mb-2">WhatsApp: <span class="text-zinc-300">06 70451243</span></p>
-                    <p class="mb-2">Email: <span class="text-zinc-300 underline">pizzeriaanas2015@gmail.com</span></p>
                     <p>© 2015 - 2026 <span class="text-zinc-300">ANAS SRLS</span></p>
-                    <p class="mt-4 opacity-50 italic">Dipendenti: 3 (2025)</p>
                 </div>
                 <div>
-                    <p class="mb-2">Sede Legale: <span class="text-zinc-300">Via Gregorio XI 10, 00166 Roma</span></p>
-                    <p class="mb-2">P.IVA: <span class="text-zinc-300">13368421007</span> | REA: <span class="text-zinc-300">RM-1442493</span></p>
-                    <p>PEC: <span class="text-zinc-300 underline">anassrls@pec.it</span></p>
+                    <p class="mb-2">P.IVA: <span class="text-zinc-300">13368421007</span></p>
+                    <p>PEC: <span class="text-zinc-300">anassrls@pec.it</span></p>
                 </div>
             </div>
         </div>
