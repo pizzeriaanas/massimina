@@ -8,7 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://awards.infcdn.net/2024/circle_v2.css" rel="stylesheet"/>
+    
+    <link href="https://awards.infcdn.net/2024/circle_v3.css" rel="stylesheet"/>
+    <link href="https://awards.infcdn.net/2025/circle_v3.css" rel="stylesheet"/>
+    <link href="https://awards.infcdn.net/2026/circle_v3.css" rel="stylesheet"/>
     
     <style>
         :root { --fumo: #0a0a0a; --neon: #facc15; --passione: #e11d48; }
@@ -17,23 +20,13 @@
         .brutal-border { border: 3px solid var(--neon); }
         .brutal-shadow { box-shadow: 8px 8px 0px var(--passione); }
         .brutal-shadow-neon { box-shadow: 5px 5px 0px var(--neon); }
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-        .regola-box { border-left: 4px solid var(--passione); padding: 1rem; background: rgba(255,255,255,0.03); margin-bottom: 1rem; }
-        .platform-card { transition: all 0.3s ease; border: 2px solid #222; background: #0f0f0f; display: flex; flex-direction: column; justify-content: center; height: 100px; text-decoration: none; }
-        .platform-card:hover { border-color: var(--neon); transform: translateY(-5px); }
-        .ta-wrapper { background: white; padding: 15px; border-radius: 8px; display: inline-block; border: 4px solid var(--neon); min-width: 200px; }
+        .ta-wrapper { background: white; padding: 15px; border-radius: 8px; display: inline-block; border: 4px solid var(--neon); min-width: 200px; height: fit-content; }
+        .guru-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; align-items: center; }
+        /* Reset per widget Guru per evitare sovrapposizioni */
+        #circle_bw { position: relative !important; margin: 0 auto !important; display: inline-block !important; }
     </style>
 </head>
 <body class="antialiased">
-
-    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#facc15] text-black p-4 z-[101] border-t-4 border-black translate-y-0 transition-transform duration-500 font-bold uppercase text-xs">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <p>Pizzeria Anas - Sito Ufficiale 2026.</p>
-            <button onclick="document.getElementById('cookie-banner').style.transform='translateY(100%)'" class="bg-black text-white px-6 py-2 brutal-shadow">CHIUDI</button>
-        </div>
-    </div>
-
-    <a href="tel:0670451243" class="fixed bottom-5 right-5 z-[100] md:hidden bg-[#e11d48] text-white p-4 font-bold border-2 border-white shadow-lg italic">📞 CHIAMA ORA</a>
 
     <header class="sticky top-0 z-50 bg-[#0a0a0a] border-b-4 border-[#facc15] p-3">
         <div class="container mx-auto flex justify-between items-center">
@@ -41,8 +34,7 @@
             <nav class="hidden md:flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest">
                 <a href="#menu" class="hover:text-[#facc15]">Menu</a>
                 <a href="#premi" class="hover:text-[#facc15]">Eccellenze</a>
-                <a href="#social" class="hover:text-[#facc15]">Social</a>
-                <a href="#regolamento" class="hover:text-[#e11d48]">Norme</a>
+                <a href="#dove" class="hover:text-[#facc15]">Contatti</a>
                 <a href="tel:0670451243" class="bg-[#e11d48] text-white px-5 py-2 brutal-shadow-neon italic">ORDINA</a>
             </nav>
         </div>
@@ -50,8 +42,9 @@
 
     <section id="premi" class="py-16 bg-black border-b border-zinc-800 text-center">
         <div class="container mx-auto px-4">
-            <h3 class="text-[#facc15] text-xl font-bold mb-10 italic uppercase tracking-[0.2em] font-sync">ECCELLENZE</h3>
-            <div class="flex flex-wrap justify-center items-center gap-10">
+            <h3 class="text-[#facc15] text-xl font-bold mb-10 italic uppercase tracking-[0.2em] font-sync">STORIA DI ECCELLENZA</h3>
+            
+            <div class="flex flex-col gap-12 items-center">
                 <div class="ta-wrapper brutal-shadow-neon">
                     <div id="TA_excellent168" class="TA_excellent">
                         <ul id="Qp2DXXxCR2M" class="TA_links KYsHAr">
@@ -62,13 +55,15 @@
                             </li>
                         </ul>
                     </div>
-                    <script async src="https://www.jscache.com/wejs?wtype=excellent&amp;uniq=168&amp;locationId=33095805&amp;lang=it&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
+                    <script async src="https://www.jscache.com/wejs?wtype=excellent&uniq=168&locationId=33095805&lang=it&display_version=2"></script>
                 </div>
 
-                <div id="circle-r-ribbon"> 
-                    <p class="r-ribbon_year">2025</p> 
-                    <span class="r-ribbon_title text-[10px] font-bold uppercase">Miglior Ristorante</span> 
-                    <p class="text-black font-bold text-[8px]">Restaurant Guru</p>
+                <div class="guru-container">
+                    <div id="circle_bw" data-length="31" onclick="if(event.target.nodeName.toLowerCase() != 'a') {window.open(this.querySelector('.circle_bw_link').href);return 0;}"> <p class="circle_bw_year">2024</p> <div class="circle_bw_name "> <a class="circle_bw_link" target="_blank" href="https://restaurantguru.it/Pizzeria-Anas-La-Massimina-Casal-Lumbroso"> <svg xmlns="http://www.w3.org/2000/svg" width="178px" height="178px" viewBox="0 0 178 178"> <defs> <path id="circle_bw_name-arc" d="M 12 89 a 77 77 0 0 0 154 0"></path> </defs> <text class="circle_bw_name_txt f14" fill="#000" text-anchor="middle"> <textPath startOffset="50%" xlink:href="#circle_bw_name-arc"> Pizzeria Anas </textPath> </text> </svg> </a> </div> <div class="circle_bw_nom "> <svg xmlns="http://www.w3.org/2000/svg" width="200px" height="200px" viewBox="0 0 200 200"> <defs> <path id="circle_bw_nom-arc1" d="M 30 100 a 70 70 0 1 1 140 0"></path> </defs> <text class="circle_bw_nom_txt f14" fill="#000" text-anchor="middle"> <textPath startOffset="50%" xlink:href="#circle_bw_nom-arc1">Miglior pizza</textPath> </text> </svg> </div> <a class="circle_bw_home" style="font-size: 0" href="https://restaurantguru.com" target="_blank">Restaurant Guru</a></div>
+
+                    <div id="circle_bw" data-length="31" onclick="if(event.target.nodeName.toLowerCase() != 'a') {window.open(this.querySelector('.circle_bw_link').href);return 0;}"> <p class="circle_bw_year">2025</p> <div class="circle_bw_name "> <a class="circle_bw_link" target="_blank" href="https://restaurantguru.it/Pizzeria-Anas-La-Massimina-Casal-Lumbroso"> <svg xmlns="http://www.w3.org/2000/svg" width="178px" height="178px" viewBox="0 0 178 178"> <defs> <path id="circle_bw_name-arc" d="M 12 89 a 77 77 0 0 0 154 0"></path> </defs> <text class="circle_bw_name_txt f14" fill="#000" text-anchor="middle"> <textPath startOffset="50%" xlink:href="#circle_bw_name-arc"> Pizzeria Anas </textPath> </text> </svg> </a> </div> <div class="circle_bw_nom "> <svg xmlns="http://www.w3.org/2000/svg" width="200px" height="200px" viewBox="0 0 200 200"> <defs> <path id="circle_bw_nom-arc1" d="M 30 100 a 70 70 0 1 1 140 0"></path> </defs> <text class="circle_bw_nom_txt f14" fill="#000" text-anchor="middle"> <textPath startOffset="50%" xlink:href="#circle_bw_nom-arc1">Miglior pizza</textPath> </text> </svg> </div> <a class="circle_bw_home" style="font-size: 0" href="https://restaurantguru.com" target="_blank">Restaurant Guru</a></div>
+
+                    <div id="circle_bw" data-length="31" onclick="if(event.target.nodeName.toLowerCase() != 'a') {window.open(this.querySelector('.circle_bw_link').href);return 0;}"> <p class="circle_bw_year">2026</p> <div class="circle_bw_name "> <a class="circle_bw_link" target="_blank" href="https://restaurantguru.it/Pizzeria-Anas-La-Massimina-Casal-Lumbroso"> <svg xmlns="http://www.w3.org/2000/svg" width="178px" height="178px" viewBox="0 0 178 178"> <defs> <path id="circle_bw_name-arc" d="M 12 89 a 77 77 0 0 0 154 0"></path> </defs> <text class="circle_bw_name_txt f14" fill="#000" text-anchor="middle"> <textPath startOffset="50%" xlink:href="#circle_bw_name-arc"> Pizzeria Anas </textPath> </text> </svg> </a> </div> <div class="circle_bw_nom "> <svg xmlns="http://www.w3.org/2000/svg" width="200px" height="200px" viewBox="0 0 200 200"> <defs> <path id="circle_bw_nom-arc1" d="M 30 100 a 70 70 0 1 1 140 0"></path> </defs> <text class="circle_bw_nom_txt f14" fill="#000" text-anchor="middle"> <textPath startOffset="50%" xlink:href="#circle_bw_nom-arc1">Miglior pizza</textPath> </text> </svg> </div> <a class="circle_bw_home" style="font-size: 0" href="https://restaurantguru.com" target="_blank">Restaurant Guru</a></div>
                 </div>
             </div>
         </div>
@@ -76,44 +71,19 @@
 
     <section id="menu" class="py-20 px-4 bg-black">
         <div class="container mx-auto text-center">
-            <h3 class="text-3xl font-bold mb-12 italic text-[#facc15] font-sync">I PIÙ FAMOSI</h3>
-            <div class="menu-grid mb-16">
+            <h3 class="text-3xl font-bold mb-12 italic text-[#facc15] font-sync">TOP MENU</h3>
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
                 <div class="p-6 border border-zinc-800 bg-zinc-900/30 text-left">
                     <div class="flex justify-between font-bold text-lg mb-1"><span>MARGHERITA</span><span>€ 6,00</span></div>
-                    <p class="text-[10px] text-zinc-400 uppercase italic">Tradizione e semplicità.</p>
                 </div>
                 <div class="p-6 border border-zinc-800 bg-zinc-900/30 text-left">
                     <div class="flex justify-between font-bold text-lg mb-1"><span>DIAVOLA 🔥</span><span>€ 7,00</span></div>
-                    <p class="text-[10px] text-zinc-400 uppercase italic">Per chi ama il piccante.</p>
                 </div>
                 <div class="p-6 border border-zinc-800 bg-zinc-900/30 text-left">
                     <div class="flex justify-between font-bold text-lg mb-1"><span>SUPPLÌ</span><span>€ 1,00</span></div>
-                    <p class="text-[10px] text-zinc-400 uppercase italic">Il cuore di Roma.</p>
                 </div>
             </div>
-            <a href="https://www.leggimenu.it/menu/pizzeria-anas?v=807534" target="_blank" class="inline-block bg-[#facc15] text-black font-bold px-10 py-5 brutal-shadow uppercase italic transition-transform hover:scale-105">
-                👉 SCOPRI IL MENU COMPLETO
-            </a>
-        </div>
-    </section>
-
-    <section id="social" class="py-20 px-4 bg-zinc-950 text-center">
-        <div class="container mx-auto">
-            <h3 class="text-3xl font-bold mb-12 italic text-[#facc15] font-sync">SOCIAL</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                <a href="https://www.tiktok.com/@pizzeria.anas" target="_blank" class="platform-card p-4">
-                    <span class="block text-[#ff0050] font-bold text-xs uppercase">TikTok</span>
-                </a>
-                <a href="https://www.instagram.com/pizzeria_anas/" target="_blank" class="platform-card p-4">
-                    <span class="block text-[#e1306c] font-bold text-xs uppercase">Instagram</span>
-                </a>
-                <a href="https://www.facebook.com/pizzeriaanas/" target="_blank" class="platform-card p-4">
-                    <span class="block text-[#1877f2] font-bold text-xs uppercase">Facebook</span>
-                </a>
-                <a href="https://www.tripadvisor.it/Restaurant_Review-g12946238-d33095805-Reviews-Pizzeria_Anas-La_Massimina_Casal_Lumbroso_Province_of_Rome_Lazio.html" target="_blank" class="platform-card p-4">
-                    <span class="block text-[#34e0a1] font-bold text-xs uppercase">TripAdvisor</span>
-                </a>
-            </div>
+            <a href="https://www.leggimenu.it/menu/pizzeria-anas?v=807534" target="_blank" class="inline-block bg-[#facc15] text-black font-bold px-10 py-5 brutal-shadow uppercase italic">SCOPRI IL MENU COMPLETO</a>
         </div>
     </section>
 
@@ -121,58 +91,38 @@
         <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div>
                 <h3 class="text-3xl font-bold italic mb-6 text-[#facc15] font-sync">CONTATTI</h3>
-                <p class="text-xl font-bold mb-4 uppercase italic">PIZZERIA ANAS</p>
                 <div class="space-y-2 mb-8 text-left">
                     <div class="p-3 border border-zinc-700 font-bold text-[10px]">🚫 NO FUMO E SVAPO</div>
                     <div class="p-3 border border-zinc-700 text-[#facc15] font-bold text-[10px]">💵 CONTANTI E CARTE</div>
-                    
                     <div class="p-3 border border-zinc-700 flex flex-wrap items-center gap-4 bg-black/20">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="h-3 opacity-80">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="h-5 opacity-80">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Maestro_logo.svg" alt="Maestro" class="h-5 opacity-80">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Apple_Pay_logo.svg" alt="Apple Pay" class="h-5 opacity-80">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" class="h-5 opacity-80">
                         <div class="border-l border-zinc-600 pl-3">
-                            <span class="text-white font-bold text-[9px] tracking-tighter italic">my<span class="text-[#2d88ff]">POS</span></span>
+                            <span class="text-white font-bold text-[9px] italic">my<span class="text-[#2d88ff]">POS</span></span>
                         </div>
                     </div>
-
-                    <div class="p-3 border border-[#e11d48] text-[#e11d48] font-bold text-[10px]">🛡️ AREA VIDEOSORVEGLIANZA</div>
                 </div>
                 <a href="tel:0670451243" class="block text-2xl font-bold text-center p-4 bg-white text-black border-4 border-black hover:bg-[#facc15] transition-all italic font-sync">📞 06 7045 1243</a>
             </div>
-            <div class="brutal-border h-[400px] overflow-hidden bg-zinc-800">
-                <iframe 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0; filter: grayscale(1) invert(0.9);" 
-                    loading="lazy" 
-                    allowfullscreen 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.618685160172!2d12.3551!3d41.8797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1325f0962817d98d%3A0x6a0c5c4e97669d58!2sPizzeria%20Anas!5e0!3m2!1sit!2sit!4v1710000000000!5m2!1sit!2sit">
-                </iframe>
+            <div class="brutal-border h-[400px] overflow-hidden">
+                <iframe width="100%" height="100%" style="border:0; filter: grayscale(1) invert(0.9);" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.4357410657!2d12.3551!3d41.8831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13258bd318536f95%3A0x600994f066b72183!2sPizzeria%20Anas!5e0!3m2!1sit!2sit!4v1713210000000!5m2!1sit!2sit"></iframe>
             </div>
         </div>
     </section>
 
     <footer class="bg-black border-t-4 border-[#facc15] pt-12 pb-8 px-6 text-center">
         <div class="container mx-auto">
-            <h2 class="text-[#facc15] font-sync text-2xl italic mb-4">PIZZERIA ANAS</h2>
+            <h2 class="text-[#facc15] font-sync text-2xl italic mb-4 uppercase">PIZZERIA ANAS</h2>
             <p class="text-white text-sm uppercase mb-8 opacity-80">📍 Via della Massimilla 80, 00166 Roma</p>
-            
-            <div class="mb-8">
-                <a href="https://www.tripadvisor.it/UserReviewDesign-g12946238-d33095805-Pizzeria_Anas-La_Massimina_Casal_Lumbroso_Province_of_Rome_Lazio.html" target="_blank" class="text-[#34e0a1] font-bold text-xs uppercase border border-[#34e0a1] px-4 py-2 hover:bg-[#34e0a1] hover:text-black transition-all">
-                    Scrivi una recensione su TripAdvisor
-                </a>
-            </div>
-
             <div class="grid md:grid-cols-2 gap-8 text-[10px] text-zinc-500 uppercase tracking-widest text-left max-w-3xl mx-auto border-t border-zinc-800 pt-8">
                 <div>
-                    <p class="mb-2">WhatsApp: <span class="text-zinc-300">06 70451243</span></p>
                     <p>© 2015 - 2026 <span class="text-zinc-300">ANAS SRLS</span></p>
+                    <p>P.IVA: <span class="text-zinc-300">13368421007</span></p>
                 </div>
                 <div>
-                    <p class="mb-2">P.IVA: <span class="text-zinc-300">13368421007</span></p>
-                    <p>PEC: <span class="text-zinc-300">anassrls@pec.it</span></p>
+                    <p>WhatsApp: <span class="text-zinc-300">06 70451243</span></p>
+                    <p>PEC: <span class="text-zinc-300 text-[8px]">anassrls@pec.it</span></p>
                 </div>
             </div>
         </div>
